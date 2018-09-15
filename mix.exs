@@ -41,7 +41,9 @@ defmodule SnTest.MixProject do
       {:shoehorn, "~> 0.4"},
       {:ring_logger, "~> 0.4"},
 
-      { :scenic, git: "git@github.com:boydm/scenic\.git", override: true}
+      { :scenic, git: "git@github.com:boydm/scenic\.git", override: true},
+      { :scenic_math, git: "git@github.com:boydm/scenic_math\.git", override: true}
+      
     ] ++ deps(@target)
   end
 

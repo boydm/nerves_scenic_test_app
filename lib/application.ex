@@ -7,6 +7,9 @@ defmodule SnTest.Application do
 
   use Application
 
+  import IEx
+
+
   def start(_type, _args) do
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
@@ -16,16 +19,18 @@ defmodule SnTest.Application do
 
   # List all child processes to be supervised
   def children("host") do
+    import Supervisor.Spec, warn: false
+    main_viewport_config = Application.get_env(:sn_test, :viewport)
     [
-      # Starts a worker by calling: SnTest.Worker.start_link(arg)
-      # {SnTest.Worker, arg},
+      supervisor(Scenic, [viewports: [main_viewport_config]]),
     ]
   end
 
   def children(_target) do
+    import Supervisor.Spec, warn: false
+    main_viewport_config = Application.get_env(:sn_test, :viewport)
     [
-      # Starts a worker by calling: SnTest.Worker.start_link(arg)
-      # {SnTest.Worker, arg},
+      supervisor(Scenic, [viewports: [main_viewport_config]]),
     ]
   end
 end
