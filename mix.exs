@@ -39,20 +39,15 @@ defmodule SnTest.MixProject do
     [
       {:nerves, "~> 1.3", runtime: false},
       {:shoehorn, "~> 0.4"},
-      {:ring_logger, "~> 0.4"}
+      {:ring_logger, "~> 0.4"},
 
-      { :scenic, "~> 0.7", override: true },
-
-      { :scenic_sensor, "~> 0.7"},
-      { :scenic_clock, "~> 0.7"},
-
-      
+      { :scenic, git: "git@github.com:boydm/scenic\.git", override: true}
     ] ++ deps(@target)
   end
 
   # Specify target specific dependencies
   defp deps("host"), do: [
-    { :scenic_driver_glfw, "~> 0.7"},
+    { :scenic_driver_glfw, git: "git@github.com:boydm/scenic_driver_glfw.git"},
   ]
 
   defp deps("rpi3"), do: [
