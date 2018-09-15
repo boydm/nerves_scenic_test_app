@@ -1,6 +1,10 @@
 # SnTest
 
-**TODO: Add description**
+__This is a WORK IN PROGRESS__
+
+Unless you are Boyd, or talking to Boyd, please don't even bother trying to get this to work.
+
+May not even compile right now, much less work...
 
 ## Targets
 
