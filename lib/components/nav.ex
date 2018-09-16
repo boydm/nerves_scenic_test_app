@@ -6,7 +6,6 @@ defmodule SnTest.Component.Nav do
 
   import Scenic.Primitives, only: [{:text, 3}, {:rect, 3}]
   import Scenic.Components, only: [{:dropdown, 3}]
-  # import Scenic.Clock.Components
 
   # import IEx
 
@@ -34,6 +33,7 @@ defmodule SnTest.Component.Nav do
         {"Primitives", SnTest.Scene.Primitives},
         {"Components", SnTest.Scene.Components},
         {"Transforms", SnTest.Scene.Transforms},
+        {"Crosshair", SnTest.Scene.Crosshair},
       ], current_scene}, id: :nav, translate: {70, 15})
     |> push_graph()
 

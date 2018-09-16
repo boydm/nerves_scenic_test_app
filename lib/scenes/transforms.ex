@@ -11,7 +11,7 @@ defmodule SnTest.Scene.Transforms do
   # @notes  """
   #   \"Transforms\" demonstrates using transforms to position, rotate and scale.
   #   The upper sliders apply transforms to the group containing the inset UI.
-  #   The lower slider rotates the quad independantly of the upper sliders.
+  #   The lower slider rotates the quad independently of the upper sliders.
   # """
 
   @start_x    150

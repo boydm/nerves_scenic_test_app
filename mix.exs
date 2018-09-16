@@ -60,7 +60,8 @@ defmodule SnTest.MixProject do
 
   defp deps_scenic("rpi3") do
     [
-      {:scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"}
+      {:scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"},
+      {:scenic_driver_nerves_touch, git: "git@github.com:boydm/scenic_driver_nerves_touch.git"}
     ]
   end
 

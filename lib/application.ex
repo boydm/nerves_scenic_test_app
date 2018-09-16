@@ -7,7 +7,7 @@ defmodule SnTest.Application do
 
   use Application
 
-  import IEx
+  # import IEx
 
 
   def start(_type, _args) do
