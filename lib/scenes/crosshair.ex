@@ -8,7 +8,8 @@ defmodule SnTest.Scene.Crosshair do
 
 #  import IEx
 
-  @graph Graph.build( font: :roboto, font_size: 16 )
+  @graph Graph.build(  )
+    |> rect( {1000, 1000}, id: :target )
     |> text("Touch the screen to start", id: :pos, translate: {20,80})
     |> line( {{0, 100}, {1000,100}}, stroke: {4, :white}, id: :cross_hair_h, hidden: true )
     |> line( {{100, 0}, {100,1000}}, stroke: {4, :white}, id: :cross_hair_v, hidden: true )
@@ -37,6 +38,7 @@ defmodule SnTest.Scene.Crosshair do
     "y: #{:erlang.float_to_binary(y * 1.0, [decimals: 1])}"
 
     graph = graph
+    |> Graph.modify( :target, &rect(&1, {w,h}) )
     |> Graph.modify( :cross_hair_h, &line(&1, {{0,y}, {w,y}}, hidden: false) )
     |> Graph.modify( :cross_hair_v, &line(&1, {{x,0}, {x,h}}, hidden: false) )
     |> Graph.modify( :pos, &text(&1, pos) )

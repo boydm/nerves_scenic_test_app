@@ -12,7 +12,7 @@
   "nerves": {:hex, :nerves, "1.3.0", "473b95afcd7a7211d33ec1406291a64f2bf4980862f93123e55b21946ae7a2f7", [:mix], [{:distillery, "~> 2.0", [hex: :distillery, repo: "hexpm", optional: false]}, {:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: true]}], "hexpm"},
   "parse_trans": {:hex, :parse_trans, "3.3.0", "09765507a3c7590a784615cfd421d101aec25098d50b89d7aa1d66646bc571c1", [:rebar3], [], "hexpm"},
   "ring_logger": {:hex, :ring_logger, "0.4.1", "db972365bfda705288d7629e80af5704a1aafdbe9da842712c3cdd587639c72e", [:mix], [], "hexpm"},
-  "scenic": {:git, "git@github.com:boydm/scenic.git", "0b4153e16ddfa390676d002a7ce330555a719726", []},
+  "scenic": {:git, "git@github.com:boydm/scenic.git", "cd118948a6495973475deb04e210192a27d0b4c1", [branch: "boyd"]},
   "scenic_clock": {:hex, :scenic_clock, "0.7.0", "645bfd0f91a37fcaf64e7ad712cc7c110ad7f3004c6566c4cf279c80403ac104", [:mix], [{:scenic, "~> 0.7.0", [hex: :scenic, repo: "hexpm", optional: false]}, {:timex, "~> 3.3", [hex: :timex, repo: "hexpm", optional: false]}], "hexpm"},
   "scenic_driver_glfw": {:git, "git@github.com:boydm/scenic_driver_glfw.git", "ae988f5e07246707604e93327c470935eb934c47", []},
   "scenic_math": {:git, "git@github.com:boydm/scenic_math.git", "6788458abfacedfd0066cef29c8c165140cafdd4", []},

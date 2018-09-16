@@ -40,7 +40,7 @@ defmodule SnTest.MixProject do
       {:nerves, "~> 1.3", runtime: false},
       {:shoehorn, "~> 0.4"},
       {:ring_logger, "~> 0.4"},
-      {:scenic, git: "git@github.com:boydm/scenic.git", override: true},
+      {:scenic, git: "git@github.com:boydm/scenic.git", branch: "boyd", override: true},
       {:scenic_math, git: "git@github.com:boydm/scenic_math.git", override: true}
     ] ++ deps(@target)
   end

@@ -15,7 +15,7 @@ defmodule SnTest.Scene.Transforms do
   # """
 
   @start_x    150
-  @start_y    300
+  @start_y    260
   @start_scale  1.0
 
   @graph Graph.build( font: :roboto, font_size: 20, theme: :dark )
@@ -31,7 +31,7 @@ defmodule SnTest.Scene.Transforms do
     |> group( fn(g) ->
       g
       |> slider({{00,500},@start_x}, id: :pos_x)
-      |> slider({{180,400},@start_y}, id: :pos_y, translate: {0,20})
+      |> slider({{180,300},@start_y}, id: :pos_y, translate: {0,20})
       |> slider({{0.2,3.0},@start_scale}, id: :scale, translate: {0,40})
       |> slider({{-1.5708,1.5708},0}, id: :rotate_ui, translate: {0,60})
     end, translate: {70, 6})

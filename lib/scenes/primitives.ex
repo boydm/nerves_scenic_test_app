@@ -79,7 +79,7 @@ defmodule SnTest.Scene.Primitives do
 
         |> text("Shadow", translate: {82, 82}, font_blur: 2, fill: :light_grey)
         |> text("Shadow", translate: {80, 80})
-      end, font_size: 40, t: {130, 240})
+      end, font_size: 40, t: {130, 220})
 
       # twisty path
       |> path([
