@@ -40,31 +40,35 @@ defmodule SnTest.MixProject do
       {:nerves, "~> 1.3", runtime: false},
       {:shoehorn, "~> 0.4"},
       {:ring_logger, "~> 0.4"},
-
-      { :scenic, git: "git@github.com:boydm/scenic\.git", override: true},
-      { :scenic_math, git: "git@github.com:boydm/scenic_math\.git", override: true}
-      
+      {:scenic, git: "git@github.com:boydm/scenic.git", override: true},
+      {:scenic_math, git: "git@github.com:boydm/scenic_math.git", override: true}
     ] ++ deps(@target)
   end
 
   # Specify target specific dependencies
-  defp deps("host"), do: [
-    { :scenic_driver_glfw, git: "git@github.com:boydm/scenic_driver_glfw.git"},
-  ]
-
-  defp deps("rpi3"), do: [
-    { :scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"},
-  ]
-
-  defp deps("kiosk"), do: [
-    { :scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"},
-    { :scenic_driver_nerves_touch, git: "git@github.com:boydm/scenic_driver_nerves_touch.git"},
-  ]
+  defp deps("host") do
+    [
+      {:scenic_driver_glfw, git: "git@github.com:boydm/scenic_driver_glfw.git"}
+    ]
+  end
 
   defp deps(target) do
     [
       {:nerves_runtime, "~> 0.6"}
-    ] ++ system(target)
+    ] ++ deps_scenic(target) ++ system(target)
+  end
+
+  defp deps_scenic("rpi3") do
+    [
+      {:scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"}
+    ]
+  end
+
+  defp deps_scenic("kiosk") do
+    [
+      {:scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"},
+      {:scenic_driver_nerves_touch, git: "git@github.com:boydm/scenic_driver_nerves_touch.git"}
+    ]
   end
 
   defp system("rpi"), do: [{:nerves_system_rpi, "~> 1.0", runtime: false}]
@@ -74,7 +78,6 @@ defmodule SnTest.MixProject do
   defp system("bbb"), do: [{:nerves_system_bbb, "~> 1.0", runtime: false}]
   defp system("ev3"), do: [{:nerves_system_ev3, "~> 1.0", runtime: false}]
   defp system("x86_64"), do: [{:nerves_system_x86_64, "~> 1.0", runtime: false}]
-
   defp system("kiosk"), do: [{:kiosk_system_rpi3, "~> 1.0", runtime: false}]
 
   defp system(target), do: Mix.raise("Unknown MIX_TARGET: #{target}")
