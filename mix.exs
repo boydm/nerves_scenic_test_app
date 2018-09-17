@@ -41,13 +41,13 @@ defmodule SnTest.MixProject do
       {:nerves, "~> 1.3", runtime: false},
       {:shoehorn, "~> 0.4"},
       {:ring_logger, "~> 0.4"},
+      {:scenic, git: "git@github.com:boydm/scenic.git", override: true},
     ] ++ deps(@target)
   end
 
   # Specify target specific dependencies
   defp deps("host") do
     [
-      {:scenic, git: "git@github.com:boydm/scenic.git", branch: "boyd", override: true},
       {:scenic_driver_glfw, git: "git@github.com:boydm/scenic_driver_glfw.git"}
     ]
   end
@@ -60,7 +60,6 @@ defmodule SnTest.MixProject do
 
   defp deps_scenic("rpi3") do
     [
-      {:scenic, git: "git@github.com:boydm/scenic.git", branch: "boyd", override: true},
       {:scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"},
       {:scenic_driver_nerves_touch, git: "git@github.com:boydm/scenic_driver_nerves_touch.git"}
     ]
@@ -68,7 +67,6 @@ defmodule SnTest.MixProject do
 
   defp deps_scenic("kiosk") do
     [
-      {:scenic, git: "git@github.com:boydm/scenic.git", branch: "boyd", override: true},
       {:scenic_driver_nerves_rpi, git: "git@github.com:boydm/scenic_driver_nerves_rpi.git"},
       {:scenic_driver_nerves_touch, git: "git@github.com:boydm/scenic_driver_nerves_touch.git"}
     ]
