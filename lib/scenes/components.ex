@@ -58,7 +58,7 @@ defmodule SnTest.Scene.Components do
         |> dropdown({
             [ {"Choice 1", :choice_1}, {"Choice 2", :choice_2}, {"Choice 3", :choice_3} ],
             :choice_1
-          }, id: :dropdown, translate: {0, 202}
+          }, id: :dropdown, translate: {0, 202}, direction: :up
         )
       end, t: {15, 74})
 

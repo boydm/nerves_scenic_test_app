@@ -13,8 +13,8 @@ defmodule SnTest.Scene.Primitives do
   # import IEx
 
   @bird_hash  "0DMsqJaAU2OyRdd9Hp3WWJoO3WE"
-  # @bird_path  :code.priv_dir(:sn_test)
-  #             |> Path.join( "/static/images/cyanoramphus_zealandicus_1849.jpg" )
+  @bird_path  :code.priv_dir(:sn_test)
+              |> Path.join( "/static/images/cyanoramphus_zealandicus_1849.jpg" )
 
   @bird_width 100
   @bird_height 128
@@ -101,7 +101,7 @@ defmodule SnTest.Scene.Primitives do
 
   def init( _a, _opts ) do
     # load the parrot texture into the cache
-    # Scenic.Cache.File.load(@bird_path, @bird_hash)
+    Scenic.Cache.File.load(@bird_path, @bird_hash)
 
     push_graph(@graph)
 
